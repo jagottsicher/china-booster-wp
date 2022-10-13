@@ -1,17 +1,17 @@
-# WP China Booster
+# China Booster WP
 A plugin to connect your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable.
 
 ## Introduction
-**WP China Booster** forked from [litepress/wp-china-yes](https://github.com/litepress/wp-china-yes), a project of WP China Localization Community ([WP-China.org]) which aims at connecting your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable.
+**China Booster wp** forked from [litepress/wp-china-yes](https://github.com/litepress/wp-china-yes), a project of WP China Localization Community ([wp-china.org]) which aims at connecting your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable.
 
 The project looked pretty abandoned (website not accessable, no translation (or service for) available) but like a promising approach. So here's a pretty neat to English translated fork.
 
 ## Installation
 
-If you want to use a release from this fork in a production environment you can find the latest version in the [Release List][1]. Download the zip file and visit [https://www.your-domain.com/wp-admin/plugin-install.php][2] directly, click "Upload Plugin" at the top left corner of the page to upload and install it. Choose the zip file to upload and eventually click "Install Now".
+If you want to use a release from this fork in a production environment you can find the latest version in the [Releases][1]. Download the zip file and visit [https://www.your-domain.com/wp-admin/plugin-install.php][2] directly, click "Upload Plugin" at the top left corner of the page to upload and install it. Choose the zip file to upload and eventually click "Install Now".
 
 ## Plugin screenshot
-![A screenhot of the backend settings of the plugin](https://user-images.githubusercontent.com/30713344/195510098-f9a24412-4f60-4599-aaaf-836456ce7ae7.png)
+SCREENSHOT FOLLOWS
 
 ## Main features
  - Acceleration of all external services usually provided by wordpress.org
@@ -35,8 +35,8 @@ If you have a good idea, or are interested in participating in project developme
 <img src="https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png" width="137" height="70" alt="" class="wp-image-764 alignnone size-medium" srcset="https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png 300w, https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png 480w, https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png 594w" sizes= "(max-width: 137px) 100vw, 137px">
 
 
-[1]: https://github.com/jagottsicher/wp-china-booster/releases
+[1]: https://github.com/jagottsicher/china-booster-wp/releases
 
 [2]: https://www.your-domain.com/wp-admin/plugin-install.php
 
-[3]: https://github.com/jagottsicher/wp-china-booster/issues
+[3]: https://github.com/jagottsicher/china-booster-wp/issues
