@@ -28,7 +28,7 @@ Your feedback is highly appreciated.
 Feel free to submit an [issue][3]
 
 ## Participation in project development
-If you have a good idea, or are interested in participating in project development, feel free to submit an [Issue][3] too.
+If you have a good idea, or are interested in participating in project development, feel free to submit an [issue][3] too.
 
 ## Sponsors
 ### Server and management software
