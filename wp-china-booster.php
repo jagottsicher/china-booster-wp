@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: WP China Booster
+ * Plugin Name: China Booster WP
  * Description: A plugin to connect your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable
  * Author: Jens Schendel
  * Author URI: https://www.jens-schendel.com/
- * Version: 3.6.3
+ * Version: 3.6.4
  * Network: True
  * License: GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,12 +12,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
-	class WP_CHINA_BOOSTER {
+if ( ! class_exists( 'CHINA_BOOSTER_WP' ) ) {
+	class CHINA_BOOSTER_WP {
 		private $page_url;
 
 		public function __construct() {
-			$this->page_url = network_admin_url( is_multisite() ? 'settings.php?page=wp-china-booster' : 'options-general.php?page=wp-china-booster' );
+			$this->page_url = network_admin_url( is_multisite() ? 'settings.php?page=china-booster-wp' : 'options-general.php?page=china-booster-wp' );
 		}
 
 		public function init() {
@@ -75,10 +75,10 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
 				add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', function () {
 					add_submenu_page(
 						is_multisite() ? 'settings.php' : 'options-general.php',
-						'WP China Booster',
-						'WP China Booster',
+						'China Booster WP',
+						'China Booster WP',
 						is_multisite() ? 'manage_network_options' : 'manage_options',
-						'wp-china-booster',
+						'china-booster-wp',
 						[ $this, 'options_page_html' ]
 					);
 				} );
@@ -313,7 +313,7 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
                 <input type="radio" value="3" name="wpapi" <?php checked( $wpapi, '3' ); ?>>No change of the application market 
             </label>
             <p class="description">
-                <b>Official application market accelerated mirror</b>: Directly reverse-generated from official sources and distributed from within China mainland, no changes except for adding support for WP China Booster (originally for wp-china-yes) plugin updates
+                <b>Official application market accelerated mirror</b>: Directly reverse-generated from official sources and distributed from within China mainland, no changes except for adding support for China Booster WP (originally for wp-china-yes) plugin updates
             </p>
             <p class="description">
                 <b>LitePress application market</b>: The interface is under development stage and currently links to <a href="https://litepress.cn/translate" target="_blank">LitePress
@@ -428,5 +428,5 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
 		}
 	}
 
-	( new WP_CHINA_BOOSTER )->init();
+	( new CHINA_BOOSTER_WP )->init();
 }
