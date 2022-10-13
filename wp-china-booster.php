@@ -4,7 +4,7 @@
  * Description: A plugin to connect your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable
  * Author: WP中国本土化社区
  * Author URI: https://wp-china.org/
- * Version: 3.6.0
+ * Version: 3.6.1
  * Network: True
  * License: GPLv3 or laterSettings
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -430,5 +430,6 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
 			} );
 		}
 	}
+
 	( new WP_CHINA_BOOSTER )->init();
 }
