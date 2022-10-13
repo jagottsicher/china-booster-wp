@@ -1,10 +1,11 @@
-# WP-China-Yes
+# wordpress-china
 
 ## Introduction
-WP China Localization Community ([WP-China.org][0]) is produced to connect your WordPress to the local ecosystem in one click
+wordpress-chian forked from [litepress/wp-china-yes](https://github.com/litepress/wp-china-yes), a project of WP China Localization Community ([WP-China.org]) which aims at connection your in China hosted WordPress installation to a domestically (China) hosted ecosystem to access downloads and services faster and more reliable.
+
+The project looked pretty abandoned (website not accessable, no translation available) but promising. So here's a pretty neat to English translated fork.
 
 ## Installation
-If you want to participate in the test, you can directly Clone the code in the Master branch, here is the test version with almost complete functional modules.
 
 If you want to use it in the official environment, please go to [Release List][1], download the latest stable version of the zip file and visit [http://你的域名/wp-admin/plugin-install.php][2] directly, then click "Upload Plugin" at the top left corner of the page to upload and install it. Then click "Upload Plugin" on the left corner of the page and upload it.
 
@@ -42,14 +43,8 @@ I think, for college students, participating in an open source project is undoub
 <img src="https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png" width="137" height="70" alt="" class="wp-image-764 alignnone size-medium" srcset="https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png 300w, https://litepress.cn/wp- content/uploads/2020/08/又拍云_logo5-300x153.png 480w, https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png 594w" sizes= "(max-width: 137px) 100vw, 137px">
 
 
-[0]: https://wp-china.org
+[1]: https://github.com/jagottsicher/wordpress-china/releases
 
-[1]: https://github.com/wp-china/wp-china-yes/releases
+[2]: http://www.your-domain.com/wp-admin/plugin-install.php
 
-[2]: http://你的域名/wp-admin/plugin-install.php
-
-[3]: https://translate.wp-china.org
-
-[4]: https://github.com/wp-china/wp-china-yes/issues
-
-[5]: https://wp-china.org/forums
+[3]: https://github.com/jagottsicher/wordpress-china/issues
