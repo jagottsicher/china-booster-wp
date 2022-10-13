@@ -13,7 +13,7 @@ A plugin to connect your WordPress installation in China to a domestically (in C
 
 == Description ==
 
-**China Booster wp** forked from [litepress/wp-china-yes](https://github.com/litepress/wp-china-yes), a project of WP China Localization Community (wp-china.org) which aims at connecting your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable.
+**China Booster WP** forked from [litepress/wp-china-yes](https://github.com/litepress/wp-china-yes), a project of WP中国本土化社区 (wp-china.org) which aims at connecting your WordPress installation in China to a domestically (in China mainland) hosted ecosystem to access downloads and services faster and more reliable.
 
 == Frequently Asked Questions ==
 
