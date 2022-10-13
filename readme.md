@@ -1,4 +1,4 @@
-# wordpress-china
+# WordPress China Booster
 A plugin to connect your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable
 
 ## Introduction
