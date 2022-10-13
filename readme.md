@@ -11,10 +11,11 @@ If you want to use it in the official environment, please go to [Release List][1
 
 ## Plugin screenshot
 SCREENSHOT FOLLOWS
+
 ## Main features
  - Acceleration of all external services from wordpress.org
  - Acceleration of some services from Google Public Library
- - Docking to [native translation platform][3], pushing full amount of Chinese packages based on AI translation + human-assisted calibration for all apps in WordPress itself and the official app market
+ - Docking to [native translation platform], pushing full amount of Chinese packages based on AI translation + human-assisted calibration for all apps in WordPress itself and the official app market (abandoned)
  - Support Chinese work information display and Chinese semantic search in the WordPress built-in application market (under development)
  - Support shopping for excellent works by domestic developers in the WordPress built-in application market and enjoy integrated installation and update push service (under development)
 
