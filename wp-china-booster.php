@@ -131,7 +131,7 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
 
 					add_settings_section(
 						'wpcy_section_main',
-						'A plugin to connect your WordPress installation to a domestically (China) hosted ecosystem to access downloads and services faster and more reliable',
+						'A plugin to connect your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable.',
 						'',
 						'wpcy'
 					);
@@ -388,11 +388,11 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
 				?>
                 <label>
                     <input type="radio" value="3"
-                           name="<?php echo $option_name; ?>" <?php checked( $option_value, '3' ); ?>>Front Desk Enablement
+                           name="<?php echo $option_name; ?>" <?php checked( $option_value, '3' ); ?>>Enable on frontend
                 </label>
                 <label>
                     <input type="radio" value="4"
-                           name="<?php echo $option_name; ?>" <?php checked( $option_value, '4' ); ?>>Backend Enable
+                           name="<?php echo $option_name; ?>" <?php checked( $option_value, '4' ); ?>>Enable on backend
                 </label>
 			<?php endif; ?>
             <label>
@@ -430,6 +430,5 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
 			} );
 		}
 	}
-
 	( new WP_CHINA_BOOSTER )->init();
 }
