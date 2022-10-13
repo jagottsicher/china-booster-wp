@@ -105,27 +105,27 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 			if ( is_admin() || wp_doing_cron() ) {
 				add_action( 'admin_init', function () {
 					/**
-					 * wpapi用以标记用户所选的仓库api，数值说明：1 使用LitePress的API，2 只是经代理加速的api.wordpress.org原版API
+					 * wpapi is used to mark the repository api selected by the user, with the following values: 1 using the LitePress API, 2 just the api.wordpress.org original API accelerated by the proxy
 					 */
 					register_setting( 'wpcy', 'wpapi' );
 
 					/**
-					 * super_admin用以标记用户是否启用管理后台加速功能
+					 * super_admin used to mark whether the user has enabled the acceleration of the administrative backend
 					 */
 					register_setting( 'wpcy', 'super_admin' );
 
 					/**
-					 * super_gravatar用以标记用户是否启用Cravatar头像功能
+					 * super_gravatar is used to mark whether the user has enabled the Cravatar avatar feature
 					 */
 					register_setting( 'wpcy', 'super_gravatar' );
 
 					/**
-					 * super_googlefonts用以标记用户是否启用谷歌字体加速功能
+					 * super_googlefonts is used to mark whether the user has enabled the Google Fonts acceleration feature
 					 */
 					register_setting( 'wpcy', 'super_googlefonts' );
 					
 					/**
-					 * super_cdnjs用以标记用户是否启用CDNJS加速功能
+					 * super_cdnjs to mark whether the user has enabled CDNJS acceleration
 					 */
 					register_setting( 'wpcy', 'super_cdnjs' );
 
@@ -186,8 +186,8 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 				} );
 
 				/**
-				 * 替换api.wordpress.org和downloads.wordpress.org为WP-China.org维护的大陆加速节点
-				 * URL替换代码来自于我爱水煮鱼(http://blog.wpjam.com/)开发的WPJAM Basic插件
+				 * Replace api.wordpress.org and downloads.wordpress.org with the mainland acceleration node maintained by WP-China.org
+				 * URL replacement code from the WPJAM Basic plugin developed by I Love Boiled Fish (http://blog.wpjam.com/)
 				 */
 				add_filter( 'pre_http_request', function ( $preempt, $r, $url ) {
 					if ( ( ! stristr( $url, 'api.wordpress.org' ) && ! stristr( $url, 'downloads.wordpress.org' ) ) || get_option( 'wpapi' ) == 3 ) {
@@ -209,7 +209,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 						}
 					}
 
-					// 如果CURL版本小于7.15.0，说明不支持SNI，无法通过HTTPS访问又拍云的节点，故而改用HTTP
+					// If the CURL version is less than 7.15.0, it means that SNI is not supported and the nodes cannot be accessed via HTTPS, so HTTP is used instead.
 					if ( version_compare( $curl_version, '7.15.0', '<' ) ) {
 						$url = str_replace( 'https://', 'http://', $url );
 					}
@@ -221,7 +221,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 			if ( ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
 				/**
-				 * 替换谷歌字体为WePublish维护的加速节点
+				 * Replace Google Fonts with accelerated nodes maintained by WePublish
 				 */
 				if ( get_option( 'super_googlefonts' ) != 2 ) {
 					$this->page_str_replace( 'str_replace', [
@@ -231,7 +231,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 				}
 
 				/**
-				 * 替换谷歌前端公共库为WePublish维护的加速节点
+				 * Replace Google front-end public library for WePublish maintained acceleration nodes
 				 */
 				if ( get_option( 'super_googleajax' ) != 2 ) {
 					$this->page_str_replace( 'str_replace', [
@@ -241,7 +241,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 				}
 				
 				/**
-				 * 替换CDNJS前端公共库为WePublish维护的加速节点
+				 * Replace the CDNJS front-end public library with an acceleration node maintained by WePublish
 				 */
 				if ( get_option( 'super_cdnjs' ) != 2 ) {
 					$this->page_str_replace( 'str_replace', [
@@ -252,14 +252,14 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 			}
 
 			/**
-			 * 替换Gravatar头像为Cravatar头像
+			 * Replace Gravatar avatar with Cravatar avatar
 			 */
 			if ( get_option( 'super_gravatar' ) == 1 ) {
 				if ( ! function_exists( 'get_cravatar_url' ) ) {
 					/**
-					 * 替换Gravatar头像为Cravatar头像
+					 * Replace Gravatar avatar with Cravatar avatar
 					 *
-					 * Cravatar是Gravatar在中国的完美替代方案，你可以在https://cravatar.cn更新你的头像
+					 * Cravatar is the perfect alternative to Gravatar in China and you can find it at https://cravatar.cn更新你的头像
 					 */
 					function get_cravatar_url( $url ) {
 						$sources = array(
@@ -276,7 +276,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 					}
 
 					/**
-					 * 替换WordPress讨论设置中的默认LOGO名称
+					 * Replace the default logo name in the WordPress discussion settings
 					 */
 					function set_defaults_for_cravatar( $avatar_defaults ) {
 						$avatar_defaults['gravatar_default'] = 'Cravatar 标志';
@@ -285,10 +285,10 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 					}
 
 					/**
-					 * 替换个人资料卡中的头像上传地址
+					 * Replace the avatar upload address in your profile card
 					 */
 					function set_user_profile_picture_for_cravatar() {
-						return '<a href="https://cravatar.cn" target="_blank">您可以在 Cravatar 修改您的资料图片</a>';
+						return '<a href="https://cravatar.cn" target="_blank">You can modify your profile picture in Cravatar</a>';
 					}
 
 					add_filter( 'user_profile_picture_description', 'set_user_profile_picture_for_cravatar' );
@@ -410,9 +410,9 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 		}
 
 		/**
-		 * @param $replace_func string 要调用的字符串关键字替换函数
-		 * @param $param array 传递给字符串替换函数的参数
-		 * @param $level int 替换级别：1.全局替换 3.前台替换 4.后台替换
+		 * @param $replace_func string String keyword replacement function to call
+		 * @param $param array Parameters passed to the string replacement function
+		 * @param $level int Replacement level: 1. Global replacement 3. Front-end replacement 4.
 		 */
 		private function page_str_replace( $replace_func, $param, $level ) {
 			if ( $level == 3 && is_admin() ) {
