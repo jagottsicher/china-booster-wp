@@ -1,7 +1,7 @@
 # wordpress-china
 
 ## Introduction
-wordpress-chian forked from [litepress/wp-china-yes](https://github.com/litepress/wp-china-yes), a project of WP China Localization Community ([WP-China.org]) which aims at connection your in China hosted WordPress installation to a domestically (China) hosted ecosystem to access downloads and services faster and more reliable.
+**wordpress-china** forked from [litepress/wp-china-yes](https://github.com/litepress/wp-china-yes), a project of WP China Localization Community ([WP-China.org]) which aims at connection your in China hosted WordPress installation to a domestically (China) hosted ecosystem to access downloads and services faster and more reliable.
 
 The project looked pretty abandoned (website not accessable, no translation available) but promising. So here's a pretty neat to English translated fork.
 
@@ -21,11 +21,11 @@ SCREENSHOT FOLLOWS
 ## Question Feedback
 Your feedback is gighly welcomed.
 
-Feel free to submit an [Issue][4]
+Feel free to submit an [Issue][3]
 
 ## Participation in project development
 
-If you have a good idea, or are interested in participating in project development, feel free to submit an [Issue][4] too
+If you have a good idea, or are interested in participating in project development, feel free to submit an [Issue][3] too
 
 ## Sponsors
 
@@ -35,6 +35,6 @@ If you have a good idea, or are interested in participating in project developme
 
 [1]: https://github.com/jagottsicher/wordpress-china/releases
 
-[2]: http://www.your-domain.com/wp-admin/plugin-install.php
+[2]: https://www.your-domain.com/wp-admin/plugin-install.php
 
 [3]: https://github.com/jagottsicher/wordpress-china/issues
