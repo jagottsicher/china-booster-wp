@@ -7,7 +7,7 @@ The project looked pretty abandoned (website not accessable, no translation avai
 
 ## Installation
 
-If you want to use it in the official environment, please go to [Release List][1], download the latest stable version of the zip file and visit [http://www.your-domain.com/wp-admin/plugin-install.php][2] directly, click "Upload Plugin" at the top left corner of the page to upload and install it. Choose the file to upload and eventually click "Install Now".
+If you want to use it in the official environment, please go to [Release List][1], download the latest stable version of the zip file and visit [https://www.your-domain.com/wp-admin/plugin-install.php][2] directly, click "Upload Plugin" at the top left corner of the page to upload and install it. Choose the file to upload and eventually click "Install Now".
 
 ## Plugin screenshot
 SCREENSHOT FOLLOWS
