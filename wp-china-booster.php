@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WordPress China Booster
+ * Plugin Name: WP China Booster
  * Description: A plugin to connect your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable
  * Author: WP中国本土化社区
  * Author URI: https://wp-china.org/
@@ -75,8 +75,8 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
 				add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', function () {
 					add_submenu_page(
 						is_multisite() ? 'settings.php' : 'options-general.php',
-						'WordPress China Booster',
-						'WordPress China Booster',
+						'WP China Booster',
+						'WP China Booster',
 						is_multisite() ? 'manage_network_options' : 'manage_options',
 						'wp-china-yes',
 						[ $this, 'options_page_html' ]
@@ -313,7 +313,7 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
                 <input type="radio" value="3" name="wpapi" <?php checked( $wpapi, '3' ); ?>>No takeover of the application market
             </label>
             <p class="description">
-                <b>Official App Market Accelerated Mirror</b>: Directly reverse-generated from official and distributed in mainland China, no changes except for adding support for WordPress China Booster (originally for wp-china-yes) plugin updates
+                <b>Official App Market Accelerated Mirror</b>: Directly reverse-generated from official and distributed in mainland China, no changes except for adding support for WP China Booster (originally for wp-china-yes) plugin updates
             </p>
             <p class="description">
                 <b>LitePress Application Marketplace</b>: The interface is in development stage and currently links to <a href="https://litepress.cn/translate" target="_blank">LitePress
