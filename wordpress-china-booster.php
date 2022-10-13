@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: WordPress-China
- * Description: A plugin to connect your WordPress installation to a domestically (China) hosted ecosystem to access downloads and services faster and more reliable
+ * Plugin Name: WordPress China Booster
+ * Description: A plugin to connect your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable
  * Author: WP中国本土化社区
- * Author URI:https://wp-china.org/
- * Version: 3.5.4
+ * Author URI: https://wp-china.org/
+ * Version: 3.5.5
  * Network: True
  * License: GPLv3 or laterSettings
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,8 +12,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! class_exists( 'WP_CHINA_YES' ) ) {
-	class WP_CHINA_YES {
+if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
+	class WP_CHINA_BOOSTER {
 		private $page_url;
 
 		public function __construct() {
@@ -37,11 +37,11 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 				 * Add "Translate Calibration" link to all plugins in the plugins list page
 				 */
 				// if (get_option('wpapi') == 1) {
-				add_filter( sprintf( '%splugin_action_links', is_multisite() ? 'network_admin_' : '' ), function ( $links, $plugin = '' ) {
-					$links[] = '<a target="_blank" href="https://litepress.cn/translate/projects/plugins/' . substr( $plugin, 0, strpos( $plugin, '/' ) ) . '/">Participate in translation</a>';
+				// add_filter( sprintf( '%splugin_action_links', is_multisite() ? 'network_admin_' : '' ), function ( $links, $plugin = '' ) {
+				// 	$links[] = '<a target="_blank" href="https://litepress.cn/translate/projects/plugins/' . substr( $plugin, 0, strpos( $plugin, '/' ) ) . '/">Participate in translation</a>';
 
-					return $links;
-				}, 10, 2 );
+				// 	return $links;
+				// }, 10, 2 );
 				//}
 
 
@@ -75,8 +75,8 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 				add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', function () {
 					add_submenu_page(
 						is_multisite() ? 'settings.php' : 'options-general.php',
-						'WP-China-Yes',
-						'WP-China-Yes',
+						'WordPress China Booster',
+						'WordPress China Booster',
 						is_multisite() ? 'manage_network_options' : 'manage_options',
 						'wp-china-yes',
 						[ $this, 'options_page_html' ]
@@ -313,29 +313,29 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
                 <input type="radio" value="3" name="wpapi" <?php checked( $wpapi, '3' ); ?>>No takeover of the application market
             </label>
             <p class="description">
-                <b>Official App Market Accelerated Mirror</b>: Directly reverse-generated from official and distributed in mainland China, no changes except for adding support for WP-China-Yes plugin updates
+                <b>Official App Market Accelerated Mirror</b>: Directly reverse-generated from official and distributed in mainland China, no changes except for adding support for WordPress China Booster (originally for wp-china-yes) plugin updates
             </p>
             <p class="description">
-                <b>LitePress Application Marketplace</b>: The interface is in the development stage and currently provides a link to the <a href="https://litepress.cn/translate" target="_blank">LitePress
-                    翻译平台</a> the integration of<b> (Note that you may encounter unknown bugs when using this interface, and you can help with  <a href="https://litepress.cn/" target="_blank">feedback</a>)</b>
+                <b>LitePress Application Marketplace</b>: The interface is in development stage and currently links to <a href="https://litepress.cn/translate" target="_blank">LitePress
+                Translation Platform</a> only. <b> (Note that you may encounter unknown bugs when using this interface, and you can help with  <a href="https://litepress.cn/" target="_blank">feedback</a>)</b>
             </p>
 			<?php
 		}
 
 		public function field_super_admin_cb() {
-			$this->field_cb( 'super_admin', 'Switch the static files that WordPress core relies on to public resources, this option greatly speeds up access to the admin backend', true );
+			$this->field_cb( 'super_admin', 'Switch the static files that the WordPress Core relies on to in china publicy available resources, this option greatly speeds up access to the admin backend', true );
 		}
 
 		public function field_super_gravatar_cb() {
-			$this->field_cb( 'super_gravatar', 'Cravatar is the perfect alternative to Gravatar in China, and you can find it on <a href="https://cravatar.cn" target="_blank">https://cravatar.cn</a> Update your avatar. (Any developer can integrate the service in their own product)' );
+			$this->field_cb( 'super_gravatar', 'Cravatar is the perfect alternative to Gravatar in China, and you can find it on <a href="https://cravatar.cn" target="_blank">https://cravatar.cn</a> to update your avatar. (All developer feel free to integrate the service in their own application.)' );
 		}
 
 		public function field_super_googlefonts_cb() {
-			$this->field_cb( 'super_googlefonts', 'Please enable this option only if you include Google Fonts to avoid unnecessary performance loss' );
+			$this->field_cb( 'super_googlefonts', 'Please enable this option only if you have to include Google Fonts and want to avoid unnecessary performance loss' );
 		}
 
 		public function field_super_googleajax_cb() {
-			$this->field_cb( 'super_googleajax', 'Please only enable this option if the Google front-end public library is included, to avoid unnecessary performance loss' );
+			$this->field_cb( 'super_googleajax', 'Please enable this option only if the Google front-end public library is included, to avoid unnecessary performance loss' );
 		}
 		
 		public function field_super_cdnjs_cb() {
@@ -366,17 +366,17 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 					<?php
 					settings_fields( 'wpcy' );
 					do_settings_sections( 'wpcy' );
-					submit_button( 'Save configuration' );
+					submit_button( 'Save Configuration' );
 					?>
                 </form>
             </div>
             <p>
-                <a href="https://wp-china.org" target="_blank">WP China Localized Community</a>Our mission is to help WordPress establish a good local ecological environment in China, in order to promote the overall development of the industry and make the market cake bigger.<br/>
-                Special Thanks<a href="https://zmingcx.com/" target="_blank">知更鸟</a>、<a href="https://www.weixiaoduo.com/"
-                                                                              target="_blank">薇晓朵团队</a>、<a
-                        href="https://www.appnode.com/" target="_blank">AppNode</a>Help given in the budding stage of the project.<br/>
-                        The server resources required for the project are provided by<a href="https://www.vpsor.cn/" target="_blank">硅云</a> and <a href="https://www.upyun.com/"
-                                                                                    target="_blank">又拍云</a>.
+                <a href="https://wp-china.org" target="_blank">WP China Localized Community</a>'s mission is to help to establish a good local ecological environment for WordPress in China in order to promote the overall development of the industry and make the market cake bigger.<br/>
+                Special Thanks to <a href="https://zmingcx.com/" target="_blank">知更鸟</a>, <a href="https://www.weixiaoduo.com/"
+                                                                             target="_blank">薇晓朵团队</a>, and <a
+                        href="https://www.appnode.com/" target="_blank">AppNode</a> for their support given in the building stage of the project.<br/>
+                        The server resources required for the project are provided by <a href="https://www.vpsor.cn/" target="_blank">硅云</a> and <a href="https://www.upyun.com/"
+                                                                            target="_blank">又拍云</a>.
             </p>
 			<?php
 		}
@@ -397,7 +397,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 			<?php endif; ?>
             <label>
                 <input type="radio" value="1"
-                       name="<?php echo $option_name; ?>" <?php checked( $option_value, '1' ); ?>><?php echo $is_global ? 'enable' : 'enable globally' ?>
+                       name="<?php echo $option_name; ?>" <?php checked( $option_value, '1' ); ?>><?php echo $is_global ? 'Enable' : 'Enable globally' ?>
             </label>
             <label>
                 <input type="radio" value="2"
@@ -431,5 +431,5 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 		}
 	}
 
-	( new WP_CHINA_YES )->init();
+	( new WP_CHINA_BOOSTER )->init();
 }
