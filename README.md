@@ -1,8 +1,8 @@
-# WordPress China Booster
+# WP China Booster
 A plugin to connect your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable
 
 ## Introduction
-**WordPress China Booster** forked from [litepress/wp-china-yes](https://github.com/litepress/wp-china-yes), a project of WP China Localization Community ([WP-China.org]) which aims at connecting your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable.
+**WP China Booster** forked from [litepress/wp-china-yes](https://github.com/litepress/wp-china-yes), a project of WP China Localization Community ([WP-China.org]) which aims at connecting your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable.
 
 The project looked pretty abandoned (website not accessable, no translation (or service for) available) but like a promising approach. So here's a pretty neat to English translated fork.
 
@@ -35,8 +35,8 @@ If you have a good idea, or are interested in participating in project developme
 <img src="https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png" width="137" height="70" alt="" class="wp-image-764 alignnone size-medium" srcset="https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png 300w, https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png 480w, https://litepress.cn/wp-content/uploads/2020/08/又拍云_logo5-300x153.png 594w" sizes= "(max-width: 137px) 100vw, 137px">
 
 
-[1]: https://github.com/jagottsicher/wordpress-china-booster/releases
+[1]: https://github.com/jagottsicher/wp-china-booster/releases
 
 [2]: https://www.your-domain.com/wp-admin/plugin-install.php
 
-[3]: https://github.com/jagottsicher/wordpress-china-booster/issues
+[3]: https://github.com/jagottsicher/wp-china-booster/issues
