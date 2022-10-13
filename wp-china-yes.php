@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: WP-China-Yes
- * Description: 将你的WordPress接入本土生态体系中，这将为你提供一个更贴近中国人使用习惯的WordPress
+ * Plugin Name: WordPress-China
+ * Description: A plugin to connect your WordPress installation to a domestically (China) hosted ecosystem to access downloads and services faster and more reliable
  * Author: WP中国本土化社区
  * Author URI:https://wp-china.org/
  * Version: 3.5.4
  * Network: True
- * License: GPLv3 or later
+ * License: GPLv3 or laterSettings
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  */
 
@@ -23,22 +23,22 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 		public function init() {
 			if ( is_admin() && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
 				/**
-				 * 插件列表项目中增加设置项
+				 * Add settings to the plug-in list item
 				 */
 				add_filter( sprintf( '%splugin_action_links_%s', is_multisite() ? 'network_admin_' : '', plugin_basename( __FILE__ ) ), function ( $links ) {
 					return array_merge(
-						[ sprintf( '<a href="%s">%s</a>', $this->page_url, '设置' ) ],
+						[ sprintf( '<a href="%s">%s</a>', $this->page_url, 'Settings' ) ],
 						$links
 					);
 				} );
 
 
 				/**
-				 * 插件列表页中所有插件增加“翻译校准”链接
+				 * Add "Translate Calibration" link to all plugins in the plugins list page
 				 */
 				// if (get_option('wpapi') == 1) {
 				add_filter( sprintf( '%splugin_action_links', is_multisite() ? 'network_admin_' : '' ), function ( $links, $plugin = '' ) {
-					$links[] = '<a target="_blank" href="https://litepress.cn/translate/projects/plugins/' . substr( $plugin, 0, strpos( $plugin, '/' ) ) . '/">参与翻译</a>';
+					$links[] = '<a target="_blank" href="https://litepress.cn/translate/projects/plugins/' . substr( $plugin, 0, strpos( $plugin, '/' ) ) . '/">Participate in translation</a>';
 
 					return $links;
 				}, 10, 2 );
@@ -46,7 +46,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 
 				/**
-				 * 初始化设置项
+				 * Initialize Settings items
 				 */
 				update_option( "wpapi", get_option( 'wpapi' ) ?: '2' );
 				update_option( "super_admin", get_option( 'super_admin' ) ?: '2' );
@@ -57,7 +57,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 
 				/**
-				 * 禁用插件时删除配置
+				 * Delete configuration when disabling plugins
 				 */
 				register_deactivation_hook( __FILE__, function () {
 					delete_option( "wpapi" );
@@ -70,7 +70,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 
 				/**
-				 * 菜单注册
+				 * Menu Registration
 				 */
 				add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', function () {
 					add_submenu_page(
@@ -85,7 +85,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 
 				/**
-				 * 将WordPress核心所依赖的静态文件访问链接替换为公共资源节点
+				 * Replace the static file access links that WordPress core relies on with public resource nodes
 				 */
 				if (
 					get_option( 'super_admin' ) != 2 &&
@@ -131,14 +131,14 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 					add_settings_section(
 						'wpcy_section_main',
-						'将你的WordPress接入本土生态体系中，这将为你提供一个更贴近中国人使用习惯的WordPress',
+						'A plugin to connect your WordPress installation to a domestically (China) hosted ecosystem to access downloads and services faster and more reliable',
 						'',
 						'wpcy'
 					);
 
 					add_settings_field(
 						'wpcy_field_select_wpapi',
-						'选择应用市场',
+						'Select Application Market',
 						[ $this, 'field_wpapi_cb' ],
 						'wpcy',
 						'wpcy_section_main'
@@ -146,7 +146,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 					add_settings_field(
 						'wpcy_field_select_super_admin',
-						'加速管理后台',
+						'Accelerated administration backend',
 						[ $this, 'field_super_admin_cb' ],
 						'wpcy',
 						'wpcy_section_main'
@@ -154,7 +154,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 					add_settings_field(
 						'wpcy_field_select_super_gravatar',
-						'使用 Cravatar 头像',
+						'Use Cravatar avatar',
 						[ $this, 'field_super_gravatar_cb' ],
 						'wpcy',
 						'wpcy_section_main'
@@ -162,7 +162,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 					add_settings_field(
 						'wpcy_field_select_super_googlefonts',
-						'加速谷歌字体',
+						'Accelerated Google Fonts',
 						[ $this, 'field_super_googlefonts_cb' ],
 						'wpcy',
 						'wpcy_section_main'
@@ -170,7 +170,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 
 					add_settings_field(
 						'wpcy_field_select_super_googleajax',
-						'加速谷歌前端公共库',
+						'Accelerated Google front-end public library',
 						[ $this, 'field_super_googleajax_cb' ],
 						'wpcy',
 						'wpcy_section_main'
@@ -178,7 +178,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 					
 					add_settings_field(
 						'wpcy_field_select_super_cdnjs',
-						'加速CDNJS前端公共库',
+						'Accelerated CDNJS front-end public library',
 						[ $this, 'field_super_cdnjs_cb' ],
 						'wpcy',
 						'wpcy_section_main'
@@ -304,42 +304,42 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 			$wpapi = get_option( 'wpapi' );
 			?>
             <label>
-                <input type="radio" value="2" name="wpapi" <?php checked( $wpapi, '2' ); ?>>官方应用市场加速镜像
+                <input type="radio" value="2" name="wpapi" <?php checked( $wpapi, '2' ); ?>>Official App Market Accelerated Mirror
             </label>
             <label>
-                <input type="radio" value="1" name="wpapi" <?php checked( $wpapi, '1' ); ?>>LitePress 应用市场（技术试验）
+                <input type="radio" value="1" name="wpapi" <?php checked( $wpapi, '1' ); ?>>LitePress Application Marketplace (Technology Trial)
             </label>
             <label>
-                <input type="radio" value="3" name="wpapi" <?php checked( $wpapi, '3' ); ?>>不接管应用市场
+                <input type="radio" value="3" name="wpapi" <?php checked( $wpapi, '3' ); ?>>No takeover of the application market
             </label>
             <p class="description">
-                <b>官方应用市场加速镜像</b>：直接从官方反代并在大陆分发，除了增加对 WP-China-Yes 插件的更新支持外未做任何更改
+                <b>Official App Market Accelerated Mirror</b>: Directly reverse-generated from official and distributed in mainland China, no changes except for adding support for WP-China-Yes plugin updates
             </p>
             <p class="description">
-                <b>LitePress 应用市场</b>：该接口处于开发阶段，目前提供了与 <a href="https://litepress.cn/translate" target="_blank">LitePress
-                    翻译平台</a> 的整合<b>（注意，你可能在使用此接口时遇到未知 BUG，希望能帮忙 <a href="https://litepress.cn/" target="_blank">反馈</a>）</b>
+                <b>LitePress Application Marketplace</b>: The interface is in the development stage and currently provides a link to the <a href="https://litepress.cn/translate" target="_blank">LitePress
+                    翻译平台</a> the integration of<b> (Note that you may encounter unknown bugs when using this interface, and you can help with  <a href="https://litepress.cn/" target="_blank">feedback</a>)</b>
             </p>
 			<?php
 		}
 
 		public function field_super_admin_cb() {
-			$this->field_cb( 'super_admin', '将WordPress核心所依赖的静态文件切换为公共资源，此选项极大的加快管理后台访问速度', true );
+			$this->field_cb( 'super_admin', 'Switch the static files that WordPress core relies on to public resources, this option greatly speeds up access to the admin backend', true );
 		}
 
 		public function field_super_gravatar_cb() {
-			$this->field_cb( 'super_gravatar', 'Cravatar 是 Gravatar 在中国的完美替代方案，你可以在 <a href="https://cravatar.cn" target="_blank">https://cravatar.cn</a> 更新你的头像。（任何开发者均可在自己的产品中集成该服务）' );
+			$this->field_cb( 'super_gravatar', 'Cravatar is the perfect alternative to Gravatar in China, and you can find it on <a href="https://cravatar.cn" target="_blank">https://cravatar.cn</a> Update your avatar. (Any developer can integrate the service in their own product)' );
 		}
 
 		public function field_super_googlefonts_cb() {
-			$this->field_cb( 'super_googlefonts', '请只在包含谷歌字体的情况下才启用该选项，以免造成不必要的性能损失' );
+			$this->field_cb( 'super_googlefonts', 'Please enable this option only if you include Google Fonts to avoid unnecessary performance loss' );
 		}
 
 		public function field_super_googleajax_cb() {
-			$this->field_cb( 'super_googleajax', '请只在包含谷歌前端公共库的情况下才启用该选项，以免造成不必要的性能损失' );
+			$this->field_cb( 'super_googleajax', 'Please only enable this option if the Google front-end public library is included, to avoid unnecessary performance loss' );
 		}
 		
 		public function field_super_cdnjs_cb() {
-			$this->field_cb( 'super_cdnjs', '请只在包含CDNJS前端公共库的情况下才启用该选项，以免造成不必要的性能损失' );
+			$this->field_cb( 'super_cdnjs', 'Please enable this option only if the CDNJS front-end public library is included, to avoid unnecessary performance loss' );
 		}
 
 		public function options_page_html() {
@@ -351,7 +351,7 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 				update_option( "super_googleajax", sanitize_text_field( $_POST['super_googleajax'] ) );
 				update_option( "super_cdnjs", sanitize_text_field( $_POST['super_cdnjs'] ) );
 
-				echo '<div class="notice notice-success settings-error is-dismissible"><p><strong>设置已保存</strong></p></div>';
+				echo '<div class="notice notice-success settings-error is-dismissible"><p><strong>Settings saved</strong></p></div>';
 			}
 
 			if ( ! current_user_can( 'manage_options' ) ) {
@@ -366,17 +366,17 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 					<?php
 					settings_fields( 'wpcy' );
 					do_settings_sections( 'wpcy' );
-					submit_button( '保存配置' );
+					submit_button( 'Save configuration' );
 					?>
                 </form>
             </div>
             <p>
-                <a href="https://wp-china.org" target="_blank">WP中国本土化社区</a>的使命是帮助WordPress在中国建立起良好的本土生态环境，以求推进行业整体发展，做大市场蛋糕。<br/>
-                特别感谢<a href="https://zmingcx.com/" target="_blank">知更鸟</a>、<a href="https://www.weixiaoduo.com/"
+                <a href="https://wp-china.org" target="_blank">WP China Localized Community</a>Our mission is to help WordPress establish a good local ecological environment in China, in order to promote the overall development of the industry and make the market cake bigger.<br/>
+                Special Thanks<a href="https://zmingcx.com/" target="_blank">知更鸟</a>、<a href="https://www.weixiaoduo.com/"
                                                                               target="_blank">薇晓朵团队</a>、<a
-                        href="https://www.appnode.com/" target="_blank">AppNode</a>在项目萌芽期给予的帮助。<br/>
-                项目所需服务器资源由<a href="https://www.vpsor.cn/" target="_blank">硅云</a>和<a href="https://www.upyun.com/"
-                                                                                    target="_blank">又拍云</a>提供。
+                        href="https://www.appnode.com/" target="_blank">AppNode</a>Help given in the budding stage of the project.<br/>
+                        The server resources required for the project are provided by<a href="https://www.vpsor.cn/" target="_blank">硅云</a> and <a href="https://www.upyun.com/"
+                                                                                    target="_blank">又拍云</a>.
             </p>
 			<?php
 		}
@@ -388,20 +388,20 @@ if ( ! class_exists( 'WP_CHINA_YES' ) ) {
 				?>
                 <label>
                     <input type="radio" value="3"
-                           name="<?php echo $option_name; ?>" <?php checked( $option_value, '3' ); ?>>前台启用
+                           name="<?php echo $option_name; ?>" <?php checked( $option_value, '3' ); ?>>Front Desk Enablement
                 </label>
                 <label>
                     <input type="radio" value="4"
-                           name="<?php echo $option_name; ?>" <?php checked( $option_value, '4' ); ?>>后台启用
+                           name="<?php echo $option_name; ?>" <?php checked( $option_value, '4' ); ?>>Backend Enable
                 </label>
 			<?php endif; ?>
             <label>
                 <input type="radio" value="1"
-                       name="<?php echo $option_name; ?>" <?php checked( $option_value, '1' ); ?>><?php echo $is_global ? '启用' : '全局启用' ?>
+                       name="<?php echo $option_name; ?>" <?php checked( $option_value, '1' ); ?>><?php echo $is_global ? 'enable' : 'enable globally' ?>
             </label>
             <label>
                 <input type="radio" value="2"
-                       name="<?php echo $option_name; ?>" <?php checked( $option_value, '2' ); ?>>禁用
+                       name="<?php echo $option_name; ?>" <?php checked( $option_value, '2' ); ?>>Disable
             </label>
             <p class="description">
 				<?php echo $description; ?>
