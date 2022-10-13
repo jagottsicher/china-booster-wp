@@ -11,7 +11,7 @@ The project looked pretty abandoned (website not accessable, no translation (or 
 If you want to use a release from this fork in a production environment you can find the latest version in the [Releases][1]. Download the zip file and visit [https://www.your-domain.com/wp-admin/plugin-install.php][2] directly, click "Upload Plugin" at the top left corner of the page to upload and install it. Choose the zip file to upload and eventually click "Install Now".
 
 ## Plugin screenshot
-SCREENSHOT FOLLOWS
+![image](https://user-images.githubusercontent.com/30713344/195565562-3f56ce6f-4c35-4f97-b22b-9e200dd69ab2.png)
 
 ## Main features
  - Acceleration of all external services usually provided by wordpress.org
