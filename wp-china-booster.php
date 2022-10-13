@@ -4,7 +4,7 @@
  * Description: A plugin to connect your WordPress installation in China to a domestically (in China) hosted ecosystem to access downloads and services faster and more reliable
  * Author: Jens Schendel
  * Author URI: https://www.jens-schendel.com/
- * Version: 3.6.4
+ * Version: 3.7.0
  * Network: True
  * License: GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
