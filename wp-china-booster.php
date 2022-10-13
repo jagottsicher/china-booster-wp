@@ -371,12 +371,10 @@ if ( ! class_exists( 'WP_CHINA_BOOSTER' ) ) {
                 </form>
             </div>
             <p>
+				<a href="https://www.jens-schendel.com" target="_blank">Jens Schendel</a> republished this project adn translated it completely to English. Please consider a small <a href="https://tippin.me/@jagottsicher" target="_blank">tip through the Lighting&#9889;Network</a>. It already works!<br/><br/>
                 <a href="https://wp-china.org" target="_blank">WP China Localized Community</a>'s mission is to help to establish a good local ecological environment for WordPress in China in order to promote the overall development of the industry and make the market cake bigger.<br/>
-                Special Thanks to <a href="https://zmingcx.com/" target="_blank">知更鸟</a>, <a href="https://www.weixiaoduo.com/"
-                                                                             target="_blank">薇晓朵团队</a>, and <a
-                        href="https://www.appnode.com/" target="_blank">AppNode</a> for their support given in the building stage of the project.<br/>
-                        The server resources required for the project are provided by <a href="https://www.vpsor.cn/" target="_blank">硅云</a> and <a href="https://www.upyun.com/"
-                                                                            target="_blank">又拍云</a>.
+                Special Thanks to <a href="https://zmingcx.com/" target="_blank">知更鸟</a>, <a href="https://www.weixiaoduo.com/" target="_blank">薇晓朵团队</a>, and <a href="https://www.appnode.com/" target="_blank">AppNode</a> for their support given in the building stage of the project.<br/>
+                The required server resources are provided by <a href="https://www.vpsor.cn/" target="_blank">硅云</a> and <a href="https://www.upyun.com/" target="_blank">又拍云</a>.
             </p>
 			<?php
 		}
