@@ -10,6 +10,11 @@ The project looked pretty abandoned (website not accessable, no translation (or 
 
 If you want to use a release from this fork in a production environment you can find the latest version in the [Releases][1]. Download the zip file and visit [https://www.your-domain.com/wp-admin/plugin-install.php][2] directly, click "Upload Plugin" at the top left corner of the page to upload and install it. Choose the zip file to upload and eventually click "Install Now".
 
+### Why is this plugin not available over wordpress.org?
+You can't find this plugin on wordpress.org (and therefore not in the index in the back-end of your WordPress installation) because it relies on services that replicate a service otherwise provided by wordpress.org. For this reason it is not eligible to be included in the index of plugins.
+
+But anyone who has ever set up and maintained a WordPress installation inside China knows that the original wordpress.org services (and others) are not reliably accessible inside China with tolerable access times.
+
 ## Plugin screenshot
 ![image](https://user-images.githubusercontent.com/30713344/195565562-3f56ce6f-4c35-4f97-b22b-9e200dd69ab2.png)
 
